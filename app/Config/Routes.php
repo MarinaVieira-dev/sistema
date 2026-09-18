@@ -5,8 +5,8 @@ use CodeIgniter\Router\RouteCollection;
 /** @var RouteCollection $routes */
 $routes->get('/', 'Home::index');
 $routes->get('/home','ConteudoController::index');
-$routes->get('/contato','ContatoController::contato');
-$routes->get('/quemSou','QuemSouController::quemSou');
-$routes->get('/produtos','ProdutosController::produtos');
-$routes->get('/habilidades','HabilidadesController::habilidades');
+$routes->get('/contato','ConteudoController::contato');
+$routes->get('/quemsou','ConteudoController::quemsou');
+$routes->get('/produtos','ConteudoController::produtos');
+$routes->get('/habilidades','ConteudoController::habilidades');
 
