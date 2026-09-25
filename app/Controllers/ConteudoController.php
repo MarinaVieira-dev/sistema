@@ -8,6 +8,9 @@ use App\Models\ConteudoModel;
 
 class ConteudoController extends BaseController
 {
+    // Em app/Controllers/BaseController.php (ou dentro do seu Controller específico)
+    protected $helpers = ['url'];
+
     public function index():string
     {
         //1. Instancia o Model
