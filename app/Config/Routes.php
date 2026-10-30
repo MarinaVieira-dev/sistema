@@ -13,4 +13,6 @@ $routes->get('/habilidades','ConteudoController::habilidades');
 //Listagem, formulário de edição e atualização
 $routes->get('conteudos','ConteudoController::listar');
 $routes->get('conteudos/editar/(:num)', 'ConteudoController::editar/$1');
+
+service('auth')->routes($routes);
 $routes->post('conteudos/atualizar/(:num)', 'ConteudoController::atualizar/$1');

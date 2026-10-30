@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conteúdos</title>
+    <link rel="stylesheet" href="<?= base_url('assets/css/estilo.css') ?>">
 </head>
 <body>
     <h1>Conteúdos cadastrados</h1>
@@ -42,7 +43,5 @@
         </table>
    <?php endif; ?>
 
- 
-        
 </body>
 </html>
