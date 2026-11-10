@@ -4,4 +4,6 @@
 <a href="<?= site_url('produtos') ?>" class="nav-link <?= url_is('produtos') ? 'active' : '' ?>">Produtos</a>
 <a href="<?= site_url('quemsou') ?>" class="nav-link <?= url_is('quemsou') ? 'active' : '' ?>">Quem Sou?</a>
 <a href="<?= site_url('habilidades') ?>" class="nav-link <?= url_is('habilidades') ? 'active' : '' ?>">Habilidades</a>
+<a href="<?= site_url('conteudos') ?>" class="nav-link <?= url_is('conteudos') ? 'active' : '' ?>"> Conteúdos</a>
+
 </nav>

@@ -171,4 +171,13 @@ td a:hover {
         min-width: 150px;
     }
 }
+.logout-form {
+ margin-left: auto;
+}
+.logout-button {
+ border: 0;
+ background: transparent;
+ font: inherit;
+ cursor: pointer;
+}
 

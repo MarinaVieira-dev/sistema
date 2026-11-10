@@ -1,3 +1,9 @@
+<?php
+/**
+ * @var array $conteudo
+ * @var array $erros
+ */
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

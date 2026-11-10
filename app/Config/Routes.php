@@ -3,16 +3,30 @@
 use CodeIgniter\Router\RouteCollection;
 
 /** @var RouteCollection $routes */
+
+// Rotas públicas
 $routes->get('/', 'Home::index');
-$routes->get('/home','ConteudoController::index');
-$routes->get('/contato','ConteudoController::contato');
-$routes->get('/quemsou','ConteudoController::quemsou');
-$routes->get('/produtos','ConteudoController::produtos');
-$routes->get('/habilidades','ConteudoController::habilidades');
+$routes->get('home', 'ConteudoController::index');
+$routes->get('contato', 'ConteudoController::contato');
+$routes->get('quemsou', 'ConteudoController::quemsou');
+$routes->get('produtos', 'ConteudoController::produtos');
+$routes->get('habilidades', 'ConteudoController::habilidades');
 
-//Listagem, formulário de edição e atualização
-$routes->get('conteudos','ConteudoController::listar');
-$routes->get('conteudos/editar/(:num)', 'ConteudoController::editar/$1');
-
+// Rotas padrão do Shield
 service('auth')->routes($routes);
-$routes->post('conteudos/atualizar/(:num)', 'ConteudoController::atualizar/$1');
+
+// Rotas que exigem autenticação por sessão
+$routes->group('', ['filter' => 'session'], static function ($routes) {
+ $routes->get('conteudos', 'ConteudoController::listar');
+ $routes->get('conteudos/editar/(:num)', 'ConteudoController::editar/$1');
+ $routes->post('conteudos/atualizar/(:num)', 'ConteudoController::atualizar/$1');
+});
+
+// Painel: exige login e grupo admin
+$routes->get('admin', 'Admin\Painel::index', [
+ 'filter' => ['session', 'group:admin'],
+]);
+// Logout: aceita apenas usuários autenticados
+$routes->post('admin/sair', 'Admin\Painel::logout', [
+ 'filter' => 'session',
+]);
