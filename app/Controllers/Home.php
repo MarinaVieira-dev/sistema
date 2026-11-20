@@ -6,7 +6,9 @@ class Home extends BaseController
 {
     public function index(): string
     {
-        return view('welcome_message');
+       $model = new \App\Models\ConteudoModel();
+       $conteudo = $model ->find(1);
+       return view('home', ['conteudo' => $conteudo]);
     }
     public function marina() : string{
         return view('marina');
